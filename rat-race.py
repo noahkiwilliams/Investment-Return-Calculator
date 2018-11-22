@@ -10,6 +10,8 @@ class rat(object):
         self.rate = rate
         self.career = career
 
+        ## create RAT object...
+
     def annual_savings(self):
         annual_savings = self.income * self.rate
         # print(str(annual_savings))
@@ -24,15 +26,18 @@ def dollar_cost_average(rat, investment_returns):
     current_balance = rat.annual_savings()
 
     for x in range (rat.career + 1):
-        a = x
+        a = x ## counter for year numbers
         x = round(current_balance, 3)
         rate_of_return = 1 + .01 * investment_returns
         new_balance = x * rate_of_return + rat.annual_savings()
         current_balance = new_balance
-        print("YEAR:" + str(a) + " = " + str(x))
+        print("YEAR:" + str(a) + " = " + str(x)) ## print responses
 
-frank = rat("Frank", 150000, 0.1, 30)
-alice = rat("Alice", 150000, 0.1, 30)
+frank = rat("Frank", 150000, 0.1, 30) ## hypothetical RAT 1
+alice = rat("Alice", 150000, 0.1, 30) ## hypothetical RAT 1
+
+''' CREATE NEW RATS TO TEST DIFFERENT COMBINATIONS OF INCOME,
+RATE OF INVESTMENT RETURNS, YEARS WORKED, ETC. '''
 
 print(str(frank.annual_savings))
 print(str(frank.lifetime_savings))
